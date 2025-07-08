@@ -6,6 +6,10 @@ const VERIFY_TOKEN = 'appointTest';
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('🚀 Webhook server is up and running!');
+});
+
 app.get('/webhook', (req, res) => {
   const mode = req.query['hub.mode'];
   const token = req.query['hub.verify_token'];
